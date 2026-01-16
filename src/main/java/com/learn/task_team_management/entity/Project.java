@@ -2,6 +2,7 @@ package com.learn.task_team_management.entity;
 
 import com.learn.task_team_management.enums.ProjectStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -22,6 +23,7 @@ public class Project {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @NotNull
     private ProjectStatus status;
 
     private LocalDate startDate;
