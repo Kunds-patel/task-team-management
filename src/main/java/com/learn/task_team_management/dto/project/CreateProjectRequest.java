@@ -1,27 +1,27 @@
-package com.learn.task_team_management.dto;
+package com.learn.task_team_management.dto.project;
+
+import com.learn.task_team_management.enums.ProjectStatus;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-public class ProjectResponse {
-    private Long id;
+public class CreateProjectRequest {
+    @NotBlank
     private String name;
+
     private String description;
-    private String status;
+
+    @NotBlank
+    private ProjectStatus status;
 
     private LocalDate startDate;
+
     private LocalDate endDate;
 
+    @NotEmpty
     private Set<Long> userIds;
-    private Set<Long> taskIds;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -39,11 +39,11 @@ public class ProjectResponse {
         this.description = description;
     }
 
-    public String getStatus() {
+    public ProjectStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ProjectStatus status) {
         this.status = status;
     }
 
@@ -69,13 +69,5 @@ public class ProjectResponse {
 
     public void setUserIds(Set<Long> userIds) {
         this.userIds = userIds;
-    }
-
-    public Set<Long> getTaskIds() {
-        return taskIds;
-    }
-
-    public void setTaskIds(Set<Long> taskIds) {
-        this.taskIds = taskIds;
     }
 }

@@ -1,13 +1,14 @@
 package com.learn.task_team_management.service.impl;
 
-import com.learn.task_team_management.dto.CreateUserRequest;
-import com.learn.task_team_management.dto.UpdateUserRequest;
-import com.learn.task_team_management.dto.UserResponse;
+import com.learn.task_team_management.dto.user.CreateUserRequest;
+import com.learn.task_team_management.dto.user.UpdateUserRequest;
+import com.learn.task_team_management.dto.user.UserResponse;
 import com.learn.task_team_management.entity.User;
 import com.learn.task_team_management.enums.UserStatus;
 import com.learn.task_team_management.repository.UserRepository;
 import com.learn.task_team_management.service.UserService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,9 +19,12 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+
     }
 
     @Override
@@ -32,7 +36,8 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName(request.getName());
         user.setEmail(request.getEmail());
-        user.setPassword(request.getPassword());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+
         user.setRole(request.getRole());
         user.setStatus(request.getStatus() != null
                 ? request.getStatus()

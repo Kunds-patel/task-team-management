@@ -1,7 +1,7 @@
 package com.learn.task_team_management.service;
 
-import com.learn.task_team_management.dto.CreateProjectRequest;
-import com.learn.task_team_management.dto.ProjectResponse;
+import com.learn.task_team_management.dto.project.CreateProjectRequest;
+import com.learn.task_team_management.dto.project.ProjectResponse;
 
 import java.util.List;
 

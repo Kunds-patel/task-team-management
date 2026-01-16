@@ -1,8 +1,8 @@
 package com.learn.task_team_management.controller;
 
-import com.learn.task_team_management.dto.CreateTaskRequest;
-import com.learn.task_team_management.dto.TaskResponse;
-import com.learn.task_team_management.dto.UpdateTaskRequest;
+import com.learn.task_team_management.dto.task.CreateTaskRequest;
+import com.learn.task_team_management.dto.task.TaskResponse;
+import com.learn.task_team_management.dto.task.UpdateTaskRequest;
 import com.learn.task_team_management.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

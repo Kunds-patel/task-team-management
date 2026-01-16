@@ -1,8 +1,8 @@
 package com.learn.task_team_management.service.impl;
 
-import com.learn.task_team_management.dto.CreateTaskRequest;
-import com.learn.task_team_management.dto.TaskResponse;
-import com.learn.task_team_management.dto.UpdateTaskRequest;
+import com.learn.task_team_management.dto.task.CreateTaskRequest;
+import com.learn.task_team_management.dto.task.TaskResponse;
+import com.learn.task_team_management.dto.task.UpdateTaskRequest;
 import com.learn.task_team_management.entity.Project;
 import com.learn.task_team_management.entity.Task;
 import com.learn.task_team_management.entity.User;

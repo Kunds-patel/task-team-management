@@ -1,28 +1,26 @@
-package com.learn.task_team_management.dto;
+package com.learn.task_team_management.dto.user;
 
 import com.learn.task_team_management.enums.UserRole;
 import com.learn.task_team_management.enums.UserStatus;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
-public class CreateUserRequest {
+import java.time.LocalDateTime;
 
-    @NotBlank(message = "Name is required")
+public class UserResponse {
+    private Long id;
     private String name;
-
-    @Email(message = "Invalid email format")
-    @NotBlank(message = "Email is required")
     private String email;
-
-    @NotBlank(message = "Password is required")
-    private String password;
-
-    @NotNull(message = "Role is required")
     private UserRole role;
-
-    @NotNull(message = "Status is required")
     private UserStatus status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -40,14 +38,6 @@ public class CreateUserRequest {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public UserRole getRole() {
         return role;
     }
@@ -62,5 +52,21 @@ public class CreateUserRequest {
 
     public void setStatus(UserStatus status) {
         this.status = status;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

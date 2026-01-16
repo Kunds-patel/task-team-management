@@ -1,7 +1,7 @@
 package com.learn.task_team_management.service.impl;
 
-import com.learn.task_team_management.dto.CreateProjectRequest;
-import com.learn.task_team_management.dto.ProjectResponse;
+import com.learn.task_team_management.dto.project.CreateProjectRequest;
+import com.learn.task_team_management.dto.project.ProjectResponse;
 import com.learn.task_team_management.entity.Project;
 import com.learn.task_team_management.entity.User;
 import com.learn.task_team_management.repository.ProjectRepository;

@@ -1,4 +1,4 @@
-package com.learn.task_team_management.dto;
+package com.learn.task_team_management.dto.task;
 
 import com.learn.task_team_management.enums.TaskPriority;
 import com.learn.task_team_management.enums.TaskStatus;
