@@ -13,7 +13,6 @@ public class CreateProjectRequest {
 
     private String description;
 
-    @NotBlank
     private ProjectStatus status;
 
     private LocalDate startDate;

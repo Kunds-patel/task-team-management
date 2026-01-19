@@ -30,7 +30,7 @@ public class Task {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assigned_user_id")
-    private User assignedTo;
+    private User assignedUser;
 
     private LocalDate dueDate;
 
@@ -93,12 +93,12 @@ public class Task {
         this.priority = priority;
     }
 
-    public User getAssignedTo() {
-        return assignedTo;
+    public User getAssignedUser() {
+        return assignedUser;
     }
 
-    public void setAssignedTo(User assignedTo) {
-        this.assignedTo = assignedTo;
+    public void setAssignedUser(User assignedUser) {
+        this.assignedUser = assignedUser;
     }
 
     public LocalDate getDueDate() {

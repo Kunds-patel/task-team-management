@@ -42,7 +42,7 @@ public class User {
     @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
     private Set<Project> projects = new HashSet<>();
 
-    @OneToMany(mappedBy = "assignedTo")
+    @OneToMany(mappedBy = "assignedUser")
     private Set<Task> tasks = new HashSet<>();
 
     @PrePersist
@@ -108,4 +108,19 @@ public class User {
         return updatedAt;
     }
 
+    public Set<Project> getProjects(){
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects){
+        this.projects = projects;
+    }
+
+    public  Set<Task> getTasks(){
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks){
+        this.tasks = tasks;
+    }
 }

@@ -47,7 +47,7 @@ public class TaskServiceImpl implements TaskService {
         task.setDescription(request.getDescription());
         task.setStatus(request.getStatus());
         task.setPriority(request.getPriority());
-        task.setAssignedTo(assignedUser);
+        task.setAssignedUser(assignedUser);
         task.setProject(project);
         task.setDueDate(request.getDueDate());
 
@@ -69,7 +69,7 @@ public class TaskServiceImpl implements TaskService {
         if (request.getAssignedUserId() != null) {
             User user = userRepository.findById(request.getAssignedUserId())
                     .orElseThrow(() -> new EntityNotFoundException("User not found"));
-            task.setAssignedTo(user);
+            task.setAssignedUser(user);
         }
 
         return mapToResponse(task);
@@ -133,9 +133,9 @@ public class TaskServiceImpl implements TaskService {
         response.setUpdatedAt(task.getUpdatedAt());
 
 
-        if (task.getAssignedTo() != null) {
-            response.setAssignedUserId(task.getAssignedTo().getId());
-            response.setAssignedUserName(task.getAssignedTo().getName());
+        if (task.getAssignedUser() != null) {
+            response.setAssignedUserId(task.getAssignedUser().getId());
+            response.setAssignedUserName(task.getAssignedUser().getName());
         }
         return response;
     }
